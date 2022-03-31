@@ -92,13 +92,15 @@
 
                             <v-col cols="12">
                                 <v-card >
-                                    <recommend-component
-                                    v-for = "memo in recommend" >
-                                        <template v-slot:name>
-                                            {{memo.name}}를 추천합니다
-                                        </template>
-                                        
-                                    </recommend-component>
+                                    <v-slide-x-transition group>
+                                        <recommend-component
+                                        v-for = "memo in recommend" :key="memo">
+                                            <template v-slot:name>
+                                                {{memo.name}}를 추천합니다
+                                            </template>
+                                        </recommend-component>
+                                    </v-slide-x-transition>
+
                                 </v-card>
                             </v-col>
 
